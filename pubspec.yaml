@@ -1,6 +1,6 @@
 name: hid_listener
 description: A hid listening library for cross platform listening to keyboard/mouse events.
-version: 2.0.1
+version: 2.0.2
 homepage: https://github.com/localcc/hid_listener
 repository: https://github.com/localcc/hid_listener
 
@@ -16,14 +16,14 @@ platforms:
 dependencies:
   flutter:
     sdk: flutter
-  plugin_platform_interface: ^2.0.2
+  plugin_platform_interface: ^2.1.8
   ffi: ">=2.0.0 <3.0.0"
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-  ffigen: ^9.0.1
+  ffigen: ^20.1.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

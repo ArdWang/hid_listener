@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hid_listener/hid_listener.dart';
 
+// ignore: deprecated_member_use
 void listener(RawKeyEvent event) {
-  print(
-      "${event is RawKeyDownEvent} ${event.logicalKey.debugName} ${event.isShiftPressed} ${event.isAltPressed} ${event.isControlPressed}");
+  debugPrint(
+      // ignore: deprecated_member_use
+      "${event is RawKeyDownEvent} ${event.logicalKey.debugName} ${HardwareKeyboard.instance.isShiftPressed} ${HardwareKeyboard.instance.isAltPressed} ${HardwareKeyboard.instance.isControlPressed}");
 }
 
 void mouseListener(MouseEvent event) {
-  print("${event}");
+  debugPrint("$event");
 }
 
 var registerResult = "";
 
 void main() {
   if (!getListenerBackend()!.initialize()) {
-    print("Failed to initialize listener backend");
+    debugPrint("Failed to initialize listener backend");
   }
 
   getListenerBackend()!.addKeyboardListener(listener);
