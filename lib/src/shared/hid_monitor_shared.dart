@@ -1,7 +1,7 @@
 import 'dart:ffi' as ffi;
-import 'package:hid_listener/hid_listener.dart';
+import 'package:hid_monitor/hid_monitor.dart';
 
-import 'hid_listener_bindings_shared.dart' as bindings;
+import 'hid_monitor_bindings_shared.dart' as bindings;
 
 MouseEvent? mouseProc(dynamic event) {
   final eventAddr = ffi.Pointer<bindings.MouseEvent>.fromAddress(event);

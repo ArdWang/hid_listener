@@ -5,8 +5,8 @@
 import FlutterMacOS
 import Foundation
 
-import hid_listener
+import hid_monitor
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
-  HidListenerPlugin.register(with: registry.registrar(forPlugin: "HidListenerPlugin"))
+  HidMonitorPlugin.register(with: registry.registrar(forPlugin: "HidMonitorPlugin"))
 }

@@ -1,14 +1,14 @@
-name: HidListenerBindingsWindows
+name: HidMonitorBindingsWindows
 description: |
-  Bindings for 'windows/hid_listener_windows.h'
-output: "lib/src/windows/hid_listener_bindings_windows.dart"
+  Bindings for 'windows/hid_monitor_windows.h'
+output: "lib/src/windows/hid_monitor_bindings_windows.dart"
 compiler-opts:
   - "-Ishared/"
 headers:
   entry-points:
-    - "windows/hid_listener_windows.h"
+    - "windows/hid_monitor_windows.h"
   include-directives:
-    - "**hid_listener**.h"
+    - "**hid_monitor**.h"
 structs:
   include:
     - WindowsKeyboardEventType

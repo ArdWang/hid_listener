@@ -244,14 +244,14 @@ using UInt = size_t;
 #if __has_attribute(external_source_symbol)
 # pragma push_macro("any")
 # undef any
-# pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="HidListener",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
+# pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="HidMonitor",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
 
 #if defined(__OBJC__)
 
-SWIFT_CLASS("_TtC11HidListener19HidListenerBindings")
-@interface HidListenerBindings : NSObject
+SWIFT_CLASS("_TtC11HidMonitor19HidMonitorBindings")
+@interface HidMonitorBindings : NSObject
 + (void)InitializeDartAPIWithData:(void * _Nonnull)data;
 + (BOOL)InitializeListeners SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)SetKeyboardListenerWithPort:(int64_t)port SWIFT_WARN_UNUSED_RESULT;
@@ -263,7 +263,7 @@ enum MacOsKeyboardEventType : NSInteger;
 @class NSString;
 enum MacOsMediaEventType : NSInteger;
 
-SWIFT_CLASS("_TtC11HidListener18MacOsKeyboardEvent")
+SWIFT_CLASS("_TtC11HidMonitor18MacOsKeyboardEvent")
 @interface MacOsKeyboardEvent : NSObject
 @property (nonatomic) enum MacOsKeyboardEventType eventType;
 @property (nonatomic, copy) NSString * _Nonnull characters;

@@ -1,5 +1,5 @@
-#include "include/hid_listener/hid_listener_plugin.h"
-#include "hid_listener_linux.h"
+#include "include/hid_monitor/hid_monitor_plugin.h"
+#include "hid_monitor_linux.h"
 
 #include <X11/XKBlib.h>
 #include <X11/extensions/XInput2.h>
@@ -17,9 +17,9 @@
 // Keycodes lie in the inclusive range [8,255]
 const int KEYCODE_OFFSET = 8;
 
-HidListener* HidListener::listenerInstance = nullptr;
+HidMonitor* HidMonitor::listenerInstance = nullptr;
 
-HidListener::HidListener() {
+HidMonitor::HidMonitor() {
     if(listenerInstance) return;
 
     m_rootInitializer = true;
@@ -67,7 +67,7 @@ HidListener::HidListener() {
     listenerInstance = this;
 }
 
-HidListener::~HidListener() {
+HidMonitor::~HidMonitor() {
     if(!m_rootInitializer) return;
 
     XCloseDisplay(m_display);
@@ -91,7 +91,7 @@ void NotifyDart(Dart_Port port, const void* work) {
     Dart_PostCObject_DL(port, &cObject);
 }
 
-void HidListener::WorkerThread() {
+void HidMonitor::WorkerThread() {
     while(m_running) {
         XEvent event;
         XNextEvent(m_display, &event);
@@ -182,13 +182,13 @@ void HidListener::WorkerThread() {
 extern "C" {
 
 FLUTTER_PLUGIN_EXPORT bool SetKeyboardListener(Dart_Port port) {
-    if(HidListener::Get() == nullptr) return false;
+    if(HidMonitor::Get() == nullptr) return false;
     keyboardListenerPort = port;
     return true;
 }
 
 FLUTTER_PLUGIN_EXPORT bool SetMouseListener(Dart_Port port) {
-    if(HidListener::Get() == nullptr) return false;
+    if(HidMonitor::Get() == nullptr) return false;
     mouseListenerPort = port;
     return true;
 }

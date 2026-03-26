@@ -1,24 +1,24 @@
-#ifndef FLUTTER_PLUGIN_HID_LISTENER_PLUGIN_H_
-#define FLUTTER_PLUGIN_HID_LISTENER_PLUGIN_H_
+#ifndef FLUTTER_PLUGIN_HID_MONITOR_PLUGIN_H_
+#define FLUTTER_PLUGIN_HID_MONITOR_PLUGIN_H_
 
 #include <flutter/method_channel.h>
 #include <flutter/plugin_registrar_windows.h>
 
 #include <memory>
 
-namespace hid_listener {
+namespace hid_monitor {
 
-class HidListenerPlugin : public flutter::Plugin {
+class HidMonitorPlugin : public flutter::Plugin {
  public:
   static void RegisterWithRegistrar(flutter::PluginRegistrarWindows *registrar);
 
-  HidListenerPlugin();
+  HidMonitorPlugin();
 
-  virtual ~HidListenerPlugin();
+  virtual ~HidMonitorPlugin();
 
   // Disallow copy and assign.
-  HidListenerPlugin(const HidListenerPlugin&) = delete;
-  HidListenerPlugin& operator=(const HidListenerPlugin&) = delete;
+  HidMonitorPlugin(const HidMonitorPlugin&) = delete;
+  HidMonitorPlugin& operator=(const HidMonitorPlugin&) = delete;
 
  private:
   // Called when a method is called on this plugin's channel from Dart.
@@ -27,6 +27,6 @@ class HidListenerPlugin : public flutter::Plugin {
       std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result);
 };
 
-}  // namespace hid_listener
+}  // namespace hid_monitor
 
-#endif  // FLUTTER_PLUGIN_HID_LISTENER_PLUGIN_H_
+#endif  // FLUTTER_PLUGIN_HID_MONITOR_PLUGIN_H_

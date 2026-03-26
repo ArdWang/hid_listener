@@ -1,13 +1,13 @@
-#include "include/hid_listener/hid_listener_plugin_windows.h"
+#include "include/hid_monitor/hid_monitor_plugin_windows.h"
 
-#include <hid_listener_windows.h>
+#include <hid_monitor_windows.h>
 #include <flutter/plugin_registrar_windows.h>
 #include <dart-sdk/include/dart_native_api.h>
 #include <dart-sdk/include/dart_api_dl.h>
 #include <dart-sdk/include/dart_api_dl.c>
 
 #include <functional>
-#include "hid_listener_plugin.h"
+#include "hid_monitor_plugin.h"
 
 static Dart_Port keyboardListenerPort = 0;
 static Dart_Port mouseListenerPort = 0;
@@ -80,16 +80,16 @@ static LRESULT MouseProc(int nCode, WPARAM wParam, LPARAM lParam) {
 
 #if defined(__cplusplus)
 
-HidListener* HidListener::listenerInstance = nullptr;
+HidMonitor* HidMonitor::listenerInstance = nullptr;
 
-HidListener::HidListener() {
+HidMonitor::HidMonitor() {
     m_keyboardHook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyboardProc, NULL, NULL);
 	m_mouseHook = SetWindowsHookEx(WH_MOUSE_LL, MouseProc, NULL, NULL);
 
 	listenerInstance = this;
 }
 
-HidListener::~HidListener() {
+HidMonitor::~HidMonitor() {
 	UnhookWindowsHookEx(m_keyboardHook);
 	UnhookWindowsHookEx(m_mouseHook);
 
@@ -99,13 +99,13 @@ HidListener::~HidListener() {
 #endif
 
 bool SetKeyboardListener(Dart_Port port) {
-	if(HidListener::Get() == nullptr) return false;
+	if(HidMonitor::Get() == nullptr) return false;
 	keyboardListenerPort = port;
 	return true;
 }
 
 bool SetMouseListener(Dart_Port port) {
-	if(HidListener::Get() == nullptr) return false;
+	if(HidMonitor::Get() == nullptr) return false;
 	mouseListenerPort = port;
 	return true;
 }
@@ -118,9 +118,9 @@ bool InitializeListeners() {
 	return true;
 }
 
-void HidListenerPluginWindowsRegisterWithRegistrar(
+void HidMonitorPluginWindowsRegisterWithRegistrar(
 	FlutterDesktopPluginRegistrarRef registrar) {
-	hid_listener::HidListenerPlugin::RegisterWithRegistrar(
+	hid_monitor::HidMonitorPlugin::RegisterWithRegistrar(
 		flutter::PluginRegistrarManager::GetInstance()
 		->GetRegistrar<flutter::PluginRegistrarWindows>(registrar));
 }

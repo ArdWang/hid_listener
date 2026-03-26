@@ -9,7 +9,7 @@
 // ignore_for_file: type=lint
 import 'dart:ffi' as ffi;
 
-/// Bindings for 'windows/hid_listener_windows.h'
+/// Bindings for 'windows/hid_monitor_windows.h'
 ///
 class HidListenerBindingsWindows {
   /// Holds the symbol lookup function.

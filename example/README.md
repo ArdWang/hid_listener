@@ -1,6 +1,6 @@
-# hid_listener_example
+# hid_monitor_example
 
-Demonstrates how to use the hid_listener plugin.
+Demonstrates how to use the hid_monitor plugin.
 
 ## Getting Started
 

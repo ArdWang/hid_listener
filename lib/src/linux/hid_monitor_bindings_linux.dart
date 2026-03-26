@@ -9,7 +9,7 @@
 // ignore_for_file: type=lint
 import 'dart:ffi' as ffi;
 
-/// Bindings for 'linux/hid_listener_linux.h'
+/// Bindings for 'linux/hid_monitor_linux.h'
 ///
 class HidListenerBindingsLinux {
   /// Holds the symbol lookup function.

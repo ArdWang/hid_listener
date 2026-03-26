@@ -1,8 +1,8 @@
-name: hid_listener
+name: hid_monitor
 description: A hid listening library for cross platform listening to keyboard/mouse events.
-version: 2.0.2
-homepage: https://github.com/localcc/hid_listener
-repository: https://github.com/localcc/hid_listener
+version: 0.0.1
+homepage: https://github.com/localcc/hid_monitor
+repository: https://github.com/localcc/hid_monitor
 
 environment:
   sdk: ">=3.0.0 <4.0.0"

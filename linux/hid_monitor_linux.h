@@ -1,17 +1,18 @@
 #pragma once
 #include <stdint.h>
-#include <hid_listener_shared.h>
+#include <hid_monitor_shared.h>
 
-enum WindowsKeyboardEventType
+enum LinuxKeyboardEventType
 {
-    WKE_KeyUp,
-    WKE_KeyDown
+    LKE_KeyUp,
+    LKE_KeyDown
 };
 
-struct WindowsKeyboardEvent {
-    enum WindowsKeyboardEventType eventType;
-    uint32_t vkCode;
+struct LinuxKeyboardEvent {
+    enum LinuxKeyboardEventType eventType;
+    uint32_t unicodeScalarValues;
     uint32_t scanCode;
+    uint32_t keyCode;
 };
 
 #if defined(__cplusplus)
@@ -25,3 +26,5 @@ extern "C"
 #if defined(__cplusplus)
 }
 #endif
+
+#endif  // FLUTTER_PLUGIN_HID_MONITOR_PLUGIN_H_

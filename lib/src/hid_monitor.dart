@@ -7,12 +7,12 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-import 'package:hid_listener/src/macos/hid_listener_macos.dart';
-import 'package:hid_listener/src/windows/hid_listener_windows.dart';
-import 'package:hid_listener/src/linux/hid_listener_linux.dart';
+import 'package:hid_monitor/src/macos/hid_monitor_macos.dart';
+import 'package:hid_monitor/src/windows/hid_monitor_windows.dart';
+import 'package:hid_monitor/src/linux/hid_monitor_linux.dart';
 
-import 'hid_listener_types.dart';
-export 'hid_listener_types.dart'
+import 'hid_monitor_types.dart';
+export 'hid_monitor_types.dart'
     show
         MouseEvent,
         MouseButtonEventType,
@@ -20,7 +20,7 @@ export 'hid_listener_types.dart'
         MouseMoveEvent,
         MouseWheelEvent;
 
-const String _libName = 'hid_listener';
+const String _libName = 'hid_monitor';
 
 final ffi.DynamicLibrary _dylib = () {
   if (Platform.isMacOS || Platform.isIOS) {

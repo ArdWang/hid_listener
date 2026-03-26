@@ -1,4 +1,4 @@
-#include "hid_listener_plugin.h"
+#include "hid_monitor_plugin.h"
 
 // This must be included before many other Windows headers.
 #include <windows.h>
@@ -13,17 +13,17 @@
 #include <memory>
 #include <sstream>
 
-namespace hid_listener {
+namespace hid_monitor {
 
 // static
-void HidListenerPlugin::RegisterWithRegistrar(
+void HidMonitorPlugin::RegisterWithRegistrar(
     flutter::PluginRegistrarWindows *registrar) {
   auto channel =
       std::make_unique<flutter::MethodChannel<flutter::EncodableValue>>(
-          registrar->messenger(), "hid_listener",
+          registrar->messenger(), "hid_monitor",
           &flutter::StandardMethodCodec::GetInstance());
 
-  auto plugin = std::make_unique<HidListenerPlugin>();
+  auto plugin = std::make_unique<HidMonitorPlugin>();
 
   channel->SetMethodCallHandler(
       [plugin_pointer = plugin.get()](const auto &call, auto result) {
@@ -33,11 +33,11 @@ void HidListenerPlugin::RegisterWithRegistrar(
   registrar->AddPlugin(std::move(plugin));
 }
 
-HidListenerPlugin::HidListenerPlugin() {}
+HidMonitorPlugin::HidMonitorPlugin() {}
 
-HidListenerPlugin::~HidListenerPlugin() {}
+HidMonitorPlugin::~HidMonitorPlugin() {}
 
-void HidListenerPlugin::HandleMethodCall(
+void HidMonitorPlugin::HandleMethodCall(
     const flutter::MethodCall<flutter::EncodableValue> &method_call,
     std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result) {
   if (method_call.method_name().compare("getPlatformVersion") == 0) {
@@ -56,4 +56,4 @@ void HidListenerPlugin::HandleMethodCall(
   }
 }
 
-}  // namespace hid_listener
+}  // namespace hid_monitor

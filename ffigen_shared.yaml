@@ -1,13 +1,13 @@
 # Run with `flutter pub run ffigen --config ffigen.yaml`.
-name: HidListenerBindings
+name: HidMonitorBindings
 description: |
-  Bindings for `shared/hid_listener_shared.h`.
-output: "lib/src/shared/hid_listener_bindings_shared.dart"
+  Bindings for `shared/hid_monitor_shared.h`.
+output: "lib/src/shared/hid_monitor_bindings_shared.dart"
 headers:
   entry-points:
-    - "shared/hid_listener_shared.h"
+    - "shared/hid_monitor_shared.h"
   include-directives:
-    - "**hid_listener**.h"
+    - "**hid_monitor**.h"
 preamble: |
   // ignore_for_file: always_specify_types
   // ignore_for_file: camel_case_types

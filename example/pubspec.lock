@@ -83,13 +83,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  hid_listener:
+  hid_monitor:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "2.0.2"
+    version: "0.0.1"
   leak_tracker:
     dependency: transitive
     description:

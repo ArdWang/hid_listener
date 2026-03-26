@@ -1,14 +1,14 @@
-name: HidListenerBindingsLinux
+name: HidMonitorBindingsLinux
 description: |
-  Bindings for 'linux/hid_listener_linux.h'
-output: "lib/src/linux/hid_listener_bindings_linux.dart"
+  Bindings for 'linux/hid_monitor_linux.h'
+output: "lib/src/linux/hid_monitor_bindings_linux.dart"
 compiler-opts:
   - "-Ishared/"
 headers:
   entry-points:
-    - "linux/hid_listener_linux.h"
+    - "linux/hid_monitor_linux.h"
   include-directives:
-    - "**hid_listener**.h"
+    - "**hid_monitor**.h"
 structs:
   include:
     - LinuxKeyboardEventType

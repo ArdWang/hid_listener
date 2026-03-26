@@ -1,6 +1,6 @@
-# hid_listener
+# hid_monitor
 
-HidListener is a library that allows you to listen to hid events cross-platform.
+HidMonitor is a library that allows you to listen to hid events cross-platform.
 
 
 ## Windows
@@ -8,13 +8,13 @@ HidListener is a library that allows you to listen to hid events cross-platform.
 Add this into your `main.cpp` file
 
 ```cpp
-#include <hid_listener/hid_listener_plugin_windows.h>
+#include <hid_monitor/hid_monitor_plugin_windows.h>
 ```
 
 and add this inside `wWinMain` funciton
 
 ```cpp
-HidListener listener;
+HidMonitor listener;
 ```
 
 ## MacOS 
@@ -22,23 +22,23 @@ HidListener listener;
 Add this into your `MainFlutterWindow.swift` file
 
 ```swift
-import hid_listener
+import hid_monitor
 ```
 
 and add this inside `MainFlutterWindow` class
 
 ```swift
-let listener = HidListener()
+let listener = HidMonitor()
 ```
 
 The file should now look something like this:
 
 ```swift
 ...
-import hid_listener
+import hid_monitor
 
 class MainFlutterWindow: NSWindow {
-  let listener = HidListener()
+  let listener = HidMonitor()
 ...
 ```
 
@@ -47,13 +47,13 @@ class MainFlutterWindow: NSWindow {
 Add this into your `main.cc` file
 
 ```cpp
-#include <hid_listener/hid_listener_plugin.h>
+#include <hid_monitor/hid_monitor_plugin.h>
 ```
 
 and add this inside `main` funciton
 
 ```cpp
-HidListener listener;
+HidMonitor listener;
 ```
 
 ## Dart

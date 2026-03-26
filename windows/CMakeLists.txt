@@ -5,33 +5,33 @@
 cmake_minimum_required(VERSION 3.14)
 
 # Project-level configuration.
-set(PROJECT_NAME "hid_listener")
+set(PROJECT_NAME "hid_monitor")
 project(${PROJECT_NAME} LANGUAGES CXX)
 
 # This value is used when generating builds using this plugin, so it must
 # not be changed
-set(PLUGIN_NAME "hid_listener_plugin")
+set(PLUGIN_NAME "hid_monitor_plugin")
 
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/../shared" shared)
 
 # Any new source files that you add to the plugin should be added here.
 list(APPEND PLUGIN_SOURCES
-  "hid_listener_plugin.cpp"
-  "hid_listener_plugin.h"
+  "hid_monitor_plugin.cpp"
+  "hid_monitor_plugin.h"
 )
 
 get_filename_component(SHARED_INC ${CMAKE_CURRENT_SOURCE_DIR}/../shared ABSOLUTE)
 # Define the plugin library target. Its name must not be changed (see comment
 # on PLUGIN_NAME above).
 add_library(${PLUGIN_NAME} SHARED
-  "include/hid_listener/hid_listener_plugin_windows.h"
-  "hid_listener_plugin_windows.cpp"
+  "include/hid_monitor/hid_monitor_plugin_windows.h"
+  "hid_monitor_plugin_windows.cpp"
   "${SHARED_INC}/dart-sdk/include/dart_api_dl.h"
   "${SHARED_INC}/dart-sdk/include/dart_api_dl.c"
   ${PLUGIN_SOURCES}
 )
 
-set_target_properties(${PLUGIN_NAME} PROPERTIES OUTPUT_NAME "hid_listener")
+set_target_properties(${PLUGIN_NAME} PROPERTIES OUTPUT_NAME "hid_monitor")
 
 # Apply a standard set of build settings that are configured in the
 # application-level CMakeLists.txt. This can be removed for plugins that want
@@ -58,7 +58,7 @@ target_link_libraries(${PLUGIN_NAME} PRIVATE flutter flutter_wrapper_plugin)
 # List of absolute paths to libraries that should be bundled with the plugin.
 # This list could contain prebuilt libraries, or libraries created by an
 # external build triggered from this build file.
-set(hid_listener_bundled_libraries
+set(hid_monitor_bundled_libraries
   ""
   PARENT_SCOPE
 )

@@ -12,7 +12,7 @@
 import 'dart:ffi' as ffi;
 import 'package:ffi/ffi.dart' as pkg_ffi;
 
-/// Bindings for 'macos/Bindings/HidListener.h'
+/// Bindings for 'macos/Bindings/HidMonitor.h'
 ///
 class HidListenerBindingsSwift {
   /// Holds the symbol lookup function.
@@ -29344,7 +29344,7 @@ class HidListenerBindingsSwift {
   late final _sel_setAttributesAsDictionary_1 =
       _registerName1("setAttributesAsDictionary:");
   late final _class_HidListenerBindings1 =
-      _getClass1("hid_listener.HidListenerBindings");
+      _getClass1("hid_monitor.HidMonitorBindings");
   late final _sel_InitializeDartAPIWithData_1 =
       _registerName1("InitializeDartAPIWithData:");
   late final _sel_InitializeListeners1 = _registerName1("InitializeListeners");
@@ -29372,7 +29372,7 @@ class HidListenerBindingsSwift {
   late final _sel_SetMouseListenerWithPort_1 =
       _registerName1("SetMouseListenerWithPort:");
   late final _class_MacOsKeyboardEvent1 =
-      _getClass1("hid_listener.MacOsKeyboardEvent");
+      _getClass1("hid_monitor.MacOsKeyboardEvent");
   late final _sel_eventType1 = _registerName1("eventType");
   int _objc_msgSend_1035(
     ffi.Pointer<ObjCObject> obj,

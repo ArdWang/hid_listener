@@ -4,10 +4,10 @@ import 'dart:ffi' as ffi;
 import 'dart:isolate';
 
 import 'package:flutter/services.dart';
-import 'package:hid_listener/src/hid_listener.dart';
-import 'package:hid_listener/src/shared/hid_listener_shared.dart' as shared;
+import 'package:hid_monitor/src/hid_monitor.dart';
+import 'package:hid_monitor/src/shared/hid_monitor_shared.dart' as shared;
 
-import 'hid_listener_bindings_macos.dart' as bindings;
+import 'hid_monitor_bindings_macos.dart' as bindings;
 
 class MacOsHidListenerBackend extends HidListenerBackend {
   MacOsHidListenerBackend(ffi.DynamicLibrary library)
